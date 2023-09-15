@@ -7,6 +7,31 @@
     <title>Library</title>
 </head>
 <body>
-    
+    <div id="container"></div>
+    <p>
+        <button id="showDialog">Add Book</button>
+    </p>
 </body>
+<dialog id="addBookDialog">
+<form>
+    <h3>Add Book</h3>
+    <div>
+        <label for="title">Title:</label>
+        <input id="title" name="title" type="text">
+
+        <label for="author">Author:</label>
+        <input id="author" name="author" type="text">
+
+        <label for="pages">Pages:</label>
+        <input id="pages" name="pages" type="number" step="1">
+
+        <label for = "read">Read:</label>
+        <input id="read" name="read" type="checkbox">
+    </div>
+    <div>
+        <button value="cancel" formmethod="dialog">Cancel</button>
+        <button id="addBtn" value="default">Add Book</button>
+      </div>
+</form>
+</dialog>
 </html>
