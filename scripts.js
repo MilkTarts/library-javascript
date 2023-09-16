@@ -18,7 +18,7 @@ function Book(title,author,pages,read){
   
   myLibrary.push(hobbit,book2);
 
-  console.log(myLibrary)
+  
 
   function createCard(){
     
@@ -26,10 +26,10 @@ function Book(title,author,pages,read){
     myLibrary.forEach((book) => {
                                 const div = document.createElement('div');
                                 div.setAttribute('style',`
-                                                        height:300px;
-                                                        width:300px;
+                                                        height:250px;
+                                                        width:250px;
                                                         border: 1px solid black;
-                                                        margin-right:20px;`);
+                                                        `);
                                div.setAttribute('id',book.title);
                                div.innerText = book.info();
 
@@ -61,6 +61,16 @@ function Book(title,author,pages,read){
     return function(){
       const id = document.getElementById(d)
       id.parentNode.removeChild(id);
+      const index = myLibrary.findIndex(object => {
+        return object.title === d;
+      });
+      console.log(d +" index:" +index);
+
+      if(index > -1){
+        myLibrary.splice(index,1);
+      }
+
+      console.log(myLibrary);
     }
   }
 
